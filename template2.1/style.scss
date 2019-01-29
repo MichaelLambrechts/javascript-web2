@@ -1,0 +1,22 @@
+
+/*
+  Import the common theme.
+*/
+@import "./_shared/scss/theme.scss";
+
+/*
+  If you need some CSS for any reason you can put it here.
+*/
+
+#container_img{
+
+	display: flex;
+ 	flex-wrap: wrap;
+}
+
+.img{
+	width: 100px;
+	height: 100px;
+	//background-size: cover;
+	object-fit: cover;
+}

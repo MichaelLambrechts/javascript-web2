@@ -1,0 +1,44 @@
+
+/*
+  Import the common theme.
+*/
+@import "./_shared/scss/theme.scss";
+
+/*
+  If you need some CSS for any reason you can put it here.
+*/
+
+.content{
+
+	display: flex;
+	 flex-wrap: wrap;
+	 justify-content: space-around;
+}
+
+.beer{
+	display: flex;
+	flex-direction: column;
+	border: 1px solid black;
+	border-radius: 10px;
+	margin: 10px;
+}
+
+#button{
+	margin-top: 50px;
+}
+
+h1{
+	font-size: 14px;
+	padding-left: 10px;
+	margin-top: 10px;
+}
+p{
+	padding-left: 10px;
+}
+img{
+	width: 250px;
+	height: 250px;
+	//background-size: cover;
+	object-fit: cover;
+	margin-bottom: 20px;
+}
