@@ -18,7 +18,7 @@ import axios from 'axios';
 
 let multiplierPrice = 50;
 let autoclickPrice = 100;
-let counter = 500;
+let counter = 0;
 let multiplier = 1;
 let multiplierAuto = 1;
 let multiplier_2 = 0;
