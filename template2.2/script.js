@@ -16,22 +16,55 @@ import axios from 'axios';
   Put the JavaScript code you want below.
   */
 
-//loadBeer();
 
-let beer = ["beer1", "beer2", "beer3", "beer4", "beer5", "beer6"];
-let hname = ["hname1", "hname2", "hname3", "hname4", "hname5", "hname6"];
-let ptag = ["ptag1", "ptag2", "ptag3", "ptag4", "ptag5", "ptag6"];
-let pyear = ["pyear1", "pyear2", "pyear3", "pyear4", "pyear5", "pyear6"];
-let imgB = ["img1", "img2", "img3", "img4", "img5", "img6"];
+
 
 
 // L'OBJET EST DANS CE CAS CI ---->0<-----
+function createBeer() {
+  for (let i = 0; i < 12; i++) {
+    axios.get('https://api.punkapi.com/v2/beers/random')
+      .then(function (response) {
+        let table = [];
+        table[i] = i;
 
-for (let i = 0; i < 6; i++) {
-  axios.get('https://api.punkapi.com/v2/beers/random')
-    .then(function (response) {
-      console.log(response.data[0].name);
-       
-      
-    });
+        //Creation de div
+        let newDiv = document.createElement("div");
+        //Affecte un attribut classe
+        newDiv.id = table[i];
+        //
+        document.getElementById('contentID').appendChild(newDiv);
+
+        //creation de p
+        let newP = document.createElement("p");
+        document.getElementById(i).appendChild(newP);
+        //ajout du nom
+        let newName = document.createTextNode(response.data[0].name);
+        newP.appendChild(newName);
+
+        //creation P du tagline
+        let newP2 = document.createElement("p");
+        document.getElementById(i).appendChild(newP2);
+
+        //ajout du tagline
+        let newTag = document.createTextNode(response.data[0].tagline);
+        newP2.appendChild(newTag);
+
+        //creation P de l'année
+        let newP3 = document.createElement("p");
+        document.getElementById(i).appendChild(newP3);
+        //ajout de l'année
+        let newYear = document.createTextNode(response.data[0].first_brewed);
+        newP3.appendChild(newYear);
+
+        //creation IMG
+        let newImg = document.createElement("img");
+        newImg.src = response.data[0].image_url;
+        newImg.alt = "beer image";
+        document.getElementById(i).appendChild(newImg);
+
+      });
+
+  }
 }
+createBeer();
