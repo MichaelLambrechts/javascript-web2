@@ -1,0 +1,28 @@
+/*
+  Import the common theme.
+*/
+@import "./_shared/scss/theme.scss";
+
+/*
+  If you need some CSS for any reason you can put it here.
+*/
+
+li{
+  border: 1px solid black;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 20px 0px;
+}
+
+img{
+  width: 300px;
+  height: 300px;
+  margin: 10px auto;
+}
+
+button{
+  border: 1px solid black;
+}

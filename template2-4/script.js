@@ -21,7 +21,7 @@ import axios from 'axios';
 
 // L'OBJET EST DANS CE CAS CI ---->0<-----
 
-async function getData() {
+/*async function getData() {
   await axios.get('https://character-database.becode.xyz/characters').then(function async (response) {
   let newContent =  document.getElementById("newContent"); 
   let displayUL = document.createElement("ul");
@@ -32,21 +32,34 @@ async function getData() {
         displayUL.appendChild(displayLI);
         let idLI = [i];
         displayLI.setAttribute("id", idLI);
+        
         let getName = response.data[i].name;
-        let getDesc = response.data[i].description;
+        let getDesc = response.data[i].shortDescription;
         let getImg = response.data[i].image;
         console.log(getImg);
         document.getElementById(i).innerHTML =  i + "<h2>"+ getName + "</h2>" + getDesc + '<img src="data:image/jpeg;base64,' + getImg + '" alt="representative image">';
-        
-        
-
-        
-        //document.querySelector("#myparagraph").innerText = 'I am the king of the world!';
-
-        //let getDesc = response.data[i].description;
-        //getName.appendChild(displayLI);
-        //getDesc.appendChild(displayLI);*/
       }
     })
 }
-getData();
+getData();*/
+
+
+//===========THE MODAL========
+
+var modal = document.querySelector(".modal");
+var trigger = document.querySelector(".trigger");
+var closeButton = document.querySelector(".close-button");
+
+function toggleModal() {
+    modal.classList.toggle("show-modal");
+}
+
+function windowOnClick(event) {
+    if (event.target === modal) {
+        toggleModal();
+    }
+}
+
+trigger.addEventListener("click", toggleModal);
+closeButton.addEventListener("click", toggleModal);
+window.addEventListener("click", windowOnClick);
